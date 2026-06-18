@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My First App</title>
+<style>
+body { font-family: sans-serif; text-align: center; padding: 40px; background: #f4f7f6; }
+.card { background: white; padding: 30px; border-radius: 12px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+input { padding: 10px; margin: 10px; border: 1px solid #ccc; border-radius: 6px; width: 200px; }
+button { padding: 10px 20px; background: #0070f3; color: white; border: none; border-radius: 6px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<div class="card">
+<h2>💰 Quick Tip Calculator</h2>
+<input type="number" id="bill" placeholder="Bill Amount ($)">
+<br>
+<input type="number" id="tipPercentage" placeholder="Tip Percentage (%)" value="15">
+<br>
+<button onclick="calculateTip()">Calculate</button>
+<h3 id="result">Total Tip: $0.00</h3>
+</div>
+
+<script>
+function calculateTip() {
+let bill = Number(document.getElementById('bill').value);
+let tipPercent = Number(document.getElementById('tipPercentage').value);
+
+let tipAmount = bill * (tipPercent / 100);
+
+document.getElementById('result').innerText = "Total Tip: $" + tipAmount.toFixed(2);
+}
+</script>
+
+</body>
+</html>
